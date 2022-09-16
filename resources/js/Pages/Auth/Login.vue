@@ -32,13 +32,13 @@
 
             <div class="flex items-center justify-between mt-4">
                 
-                <jet-button class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <jet-button @click="submit()" class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Log in
                 </jet-button>
-                <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
+                <a v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
                     Forgot your password?
-                </Link>
-                <Link :href="route('register')" class="underline text-gray-600 text-sm over:text-gray-900">Create an account</Link>
+                </a>
+                <a :href="route('register')" class="underline text-gray-600 text-sm over:text-gray-900">Create an account</a>
             </div>
         </form>
     </jet-authentication-card>
@@ -53,7 +53,7 @@
     import JetCheckbox from '@/Jetstream/Checkbox.vue'
     import JetLabel from '@/Jetstream/Label.vue'
     import JetValidationErrors from '@/Jetstream/ValidationErrors.vue'
-    import { Head, Link } from '@inertiajs/inertia-vue3';
+    import { Head } from '@inertiajs/inertia-vue3';
 
     export default defineComponent({
         components: {
@@ -65,7 +65,6 @@
             JetCheckbox,
             JetLabel,
             JetValidationErrors,
-            Link,
         },
 
         props: {

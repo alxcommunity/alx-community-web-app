@@ -37,10 +37,10 @@
             </div>
             <div class="mt-4 flex justify-between ">
 
-              <jet-button class="ml-4" :class="{ 'opacity-25': alx_form.processing }" :disabled="alx_form.processing">
+              <jet-button @click="alxchecker()" class="ml-4" :class="{ 'opacity-25': alx_form.processing }" :disabled="alx_form.processing">
                     Next
                 </jet-button>
-                <Link :href="route('login')" class=" text-gray-600 underline">Already have an account</Link>
+                <a :href="route('login')" class=" text-gray-600 underline">Already have an account</a>
             </div>
         </form>
         <form @submit.prevent="submit" v-if="step == 1">
@@ -82,11 +82,11 @@
                     Back
                 </jet-button>
 
-                <Link :href="route('login')" class="underline text-sm text-gray-600 hover:text-gray-900">
+                <a :href="route('login')" class="underline text-sm text-gray-600 hover:text-gray-900">
                     Already registered?
-                </Link>
+                </a>
 
-                <jet-button class="ml-0" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <jet-button @click="submit()" class="ml-0" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Register
                 </jet-button>
             </div>
@@ -104,7 +104,7 @@
     import JetCheckbox from '@/Jetstream/Checkbox.vue'
     import JetLabel from '@/Jetstream/Label.vue'
     import JetValidationErrors from '@/Jetstream/ValidationErrors.vue'
-    import { Head, Link, usePage } from '@inertiajs/inertia-vue3';
+    import { Head, usePage } from '@inertiajs/inertia-vue3';
 
 
 
@@ -118,7 +118,6 @@
             JetCheckbox,
             JetLabel,
             JetValidationErrors,
-            Link,
             AlxLogo
         },
 
