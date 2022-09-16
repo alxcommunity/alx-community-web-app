@@ -11,13 +11,13 @@
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <Link :href="route('home')" class="inline-flex tracking-[10px] font-bold text-2xl items-center uppercase font-mono   gap-x-5">
+                                <jet-nav-link :href="route('home')" class="inline-flex tracking-[10px] font-bold text-2xl items-center uppercase font-mono   gap-x-5">
                                     <jet-application-mark class="block h-9 w-auto" />
                                     <!-- <img class="w-12" src="../../../public/images/logo3.png" alt=""> -->
                                     <div>ALX<span class="tracking-wider text-sky-500">Community </span> 
                                     </div>
                                     
-                                </Link>
+                                </jet-nav-link>
                             </div>
 
                             <!-- Navigation Links -->
@@ -296,7 +296,7 @@
     import Modal from '@/Jetstream/Modal.vue'
     import CreateTeamForm from '@/Pages/Teams/Partials/CreateTeamForm.vue'
 
-    import { Head, Link } from '@inertiajs/inertia-vue3';
+    import { Head } from '@inertiajs/inertia-vue3';
 
     export default defineComponent({
         props: {
@@ -314,7 +314,6 @@
             JetDropdownLink,
             JetNavLink,
             JetResponsiveNavLink,
-            Link,
             Modal,
             CreateTeamForm
         },
