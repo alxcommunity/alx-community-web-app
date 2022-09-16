@@ -11,13 +11,13 @@
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <jet-nav-link :href="route('home')" class="inline-flex tracking-[10px] font-bold text-2xl items-center uppercase font-mono   gap-x-5">
+                                <a :href="route('home')" class="inline-flex tracking-[10px] font-bold text-2xl items-center uppercase font-mono   gap-x-5">
                                     <jet-application-mark class="block h-9 w-auto" />
                                     <!-- <img class="w-12" src="../../../public/images/logo3.png" alt=""> -->
                                     <div>ALX<span class="tracking-wider text-sky-500">Community </span> 
                                     </div>
                                     
-                                </jet-nav-link>
+                                </a>
                             </div>
 
                             <!-- Navigation Links -->
