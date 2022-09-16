@@ -88,7 +88,7 @@ section figure img {
                                    <h1>Let's <span class="text-4xl text-sky-700"> Join </span> Together Today</h1>
                                    <h1>To Create A <span class="text-4xl text-sky-700"> Fabulous </span></h1>
                                    <h1 class="text-5xl uppercase text-gray-700 font-serif font-bolder py-4">Tomorrow  </h1>
-                                   <Link :href="route('register')" class="mt-2 bg-sky-600 p-2 font-bold px-5 box-border text-base border-double ring-2 text-white rounded-md text-right">Join Now</Link>
+                                   <a :href="route('register')" class="mt-2 bg-sky-600 p-2 font-bold px-5 box-border text-base border-double ring-2 text-white rounded-md text-right">Join Now</a>
                               </div>
                               <div class="flex w-2/5 z-0 mt-8">
                                        
@@ -118,7 +118,7 @@ section figure img {
                                   
 
                                    <div class="card bg-white  p-4 rounded-md border shadow-sm" v-for="team in teams" :key="team.id">
-                                        <Link :href="route('team.show', {'id': team.id})">
+                                        <a :href="route('team.show', {'id': team.id})">
                                         
                                        
                                         <div class="flex gap-4">
@@ -144,7 +144,7 @@ section figure img {
                                    
 
                                         </div>
-                                         </Link>
+                                   </a>
                                    </div>
 
                                   
@@ -226,24 +226,24 @@ section figure img {
              
                <div class="flex flex-col gap-y-3 tracking-widest text-gray-600">
                     <h3 class=" font-mono text-xl font-bold">Our network</h3>
-                     <Link href="/teams"> alx community </Link>
-                     <Link href="/blogs"> alx ethiopia </Link>
-                     <Link href="/popular"> alx offical </Link>
-                     <Link href="github.com"> github </Link>
+                     <a href="/teams"> alx community </a>
+                     <a href="/blogs"> alx ethiopia </a>
+                     <a href="/popular"> alx offical </a>
+                     <a href="github.com"> github </a>
                </div>   
                <div class="flex flex-col gap-y-3 tracking-widest text-gray-600">
-                    <h3 class=" font-mono text-xl font-bold">Site Links</h3>
-                     <Link href="/teams"> Teams </Link>
-                     <Link href="/blogs"> blogs </Link>
-                     <Link href="/popular"> Popular </Link>
-                     <Link href="/alx_risings"> alx risings </Link>
+                    <h3 class=" font-mono text-xl font-bold">Site as</h3>
+                     <a href="/teams"> Teams </a>
+                     <a href="/blogs"> blogs </a>
+                     <a href="/popular"> Popular </a>
+                     <a href="/alx_risings"> alx risings </a>
                </div>   
                <div class="flex flex-col gap-y-3 tracking-widest text-gray-600">
                     <h3 class=" font-mono text-xl font-bold">About Us</h3>
-                   <Link href="/about"> About Us </Link>
-                    <Link href="/alxteam">Our Team </Link>
-                    <Link href="/blog"> Our Blog</Link>
-                    <Link href="/contact"> Contact Us</Link>
+                   <a href="/about"> About Us </a>
+                    <a href="/alxteam">Our Team </a>
+                    <a href="/blog"> Our Blog</a>
+                    <a href="/contact"> Contact Us</a>
                </div>
                       
                </div>
@@ -255,15 +255,14 @@ section figure img {
 </template>
 
 <script>
-   import { Head, Link } from '@inertiajs/inertia-vue3';
+   import { Head} from '@inertiajs/inertia-vue3';
     import { defineComponent } from 'vue'
     import AppLayout from '../Layouts/AppLayout.vue'
     export default defineComponent({
          props: ['teams'],
         components: {
             AppLayout,
-            Head,
-            Link
+            Head
         },
      
     })

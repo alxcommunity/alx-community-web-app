@@ -32,7 +32,7 @@
 
 <script>
 
-import Overview from './Partials/Index.vue';
+import Overview from './Partials/Slides.vue';
 
 export default ({
     name:"Main",

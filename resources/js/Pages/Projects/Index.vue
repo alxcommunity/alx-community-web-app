@@ -76,7 +76,7 @@
  </template>
  
  <script>
- import { Head, Link } from '@inertiajs/inertia-vue3';
+ import { Head } from '@inertiajs/inertia-vue3';
  import { defineComponent } from 'vue'
  import AppLayout from '@/Layouts/AppLayout.vue'
  import Modal from '@/Jetstream/Modal'
@@ -89,7 +89,6 @@
      components: {
          AppLayout,
          Head,
-         Link,
          Modal,
          Main,
          Boards,

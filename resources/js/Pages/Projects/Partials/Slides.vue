@@ -4,8 +4,7 @@
             <div class="slides">
                 <section data-markdown data-separator="^\n\n\n"
          		data-separator-vertical="^\n\n">
-                    <textarea data-template>
-    			{{project.overview}} 
+                    <textarea data-template v-model="project.overview">
                       </textarea
                     >
                 </section>

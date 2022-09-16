@@ -19,9 +19,9 @@
                       <span v-if="permissions.indexOf('invite_users') !== -1 || permissions.indexOf('*') !== -1" class="">
                           <img class="h-5" src="../../../../public/images/add_user.png" alt="">
                       </span>
-                      <Link v-if="permissions.indexOf('change_info') !== -1 || permissions.indexOf('*') !== -1" :href="(route('team.settings', {id:team.id}))" class="" >
+                      <a v-if="permissions.indexOf('change_info') !== -1 || permissions.indexOf('*') !== -1" :href="(route('team.settings', {id:team.id}))" class="" >
                           <img class="h-5" src="../../../../public/images/settings.png" alt="">
-                      </Link>
+                      </a>
                     </div>
                  
                 </div>
@@ -48,7 +48,7 @@
             </div>
 
             <button v-if="$page.props.user" @click="sendJoinTeamReq()" class="sticky bottom-5 z-50 py-2 rounded-md text-white font-extrabold bg-sky-600 border-2 border-transparent ring-2"> JOIN </button>
-            <Link role="button" v-else :href="route('register')" class="sticky bottom-5 z-50 py-2 rounded-md text-white font-extrabold bg-sky-600 border-2 border-transparent ring-2 text-center"> JOIN </Link>
+            <a role="button" v-else :href="route('register')" class="sticky bottom-5 z-50 py-2 rounded-md text-white font-extrabold bg-sky-600 border-2 border-transparent ring-2 text-center"> JOIN </a>
             </div>
         </template>
 
@@ -83,7 +83,7 @@
                     class="bg-white  rounded-xl border shadow-sm p-1 "
                     v-for="project in team.projects" :key="project.id"
                 >
-                <Link :href="route('project.show', {id: team.id, project:project.id})">
+                <a :href="route('project.show', {id: team.id, project:project.id})">
                     <span class=" font-thin text-blue-700 text-xs px-4">category name</span>
                     <div class="flex gap-4 border-b pb-5 px-4 ">
                         <div >
@@ -113,7 +113,7 @@
                             </span>
                         </div>
                     </div>
-                    </Link>
+                    </a>
                 </div>
             </div>
         </div>
@@ -133,12 +133,11 @@
 </template>
 <script>
 import AppLayout from "../../Layouts/AppLayout.vue";
-import { Link } from "@inertiajs/inertia-vue3";
 import Modal from '@/Jetstream/Modal'
 import Input from "../../Jetstream/Input.vue";
 export default {
     props: ['team', 'permissions'],
-    components: { AppLayout, Link, Modal, Input },
+    components: { AppLayout, Modal, Input },
     data() {
         return {
             modalShow:false,
