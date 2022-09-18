@@ -67,10 +67,14 @@ class TeamController extends Controller
         if (Auth::user()) {
             $user = Auth::user();
             $permissions = $user->teamPermissions($team);
+            $isJoined = $user->belongsToTeam($team);
+            $isOwner = $user->ownsTeam($team);
+            $canLeave = $id != 1;
+            $userTeamInfo = ['isJoined' => $isJoined, 'isOwner' => $isOwner, 'canLeave' => $canLeave];
 
         }
 
-        return Inertia::render('Teams/Show', ['team' => $team, 'permissions' => $permissions ?? ""]);
+        return Inertia::render('Teams/Show', ['team' => $team, 'userTeamInfo' => $userTeamInfo ?? "", 'permissions' => $permissions ?? ""]);
     }
 
     /**

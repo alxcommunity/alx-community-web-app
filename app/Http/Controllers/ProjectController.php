@@ -89,9 +89,12 @@ class ProjectController extends Controller
             $user = Auth::user();
             $user->hasTeamPermission($project, 'show');
             $permissions = $user->teamPermissions($project);
+            $isJoined = $user->belongsToTeam($project);
+            $isOwner = $user->ownsTeam($project);
+            $userProjectInfo = ['isJoined' => $isJoined, 'isOwner' => $isOwner];
         }
 
-        return Inertia::render('Projects/Index', ['project'  => $project, 'permissions' => $permissions ?? [], 'token' => csrf_token()]);
+        return Inertia::render('Projects/Index', ['project'  => $project, 'permissions' => $permissions ?? [], 'userProjectInfo' => $userProjectInfo ?? "", 'token' => csrf_token()]);
 
     }
 

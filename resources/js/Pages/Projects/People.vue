@@ -3,7 +3,7 @@
          <div class="flex">
                <div class=" w-2/3">
 
-                    <div v-if="$page.props.user">
+                    <div v-if="$page.props.user && false">
                     <h1 class="text-gray-700 text-3xl font-bold mt-5">New Request</h1>
 
                     <div class="my-10 flex gap-y-3 flex-col">

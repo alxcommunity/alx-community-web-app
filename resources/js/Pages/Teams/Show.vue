@@ -46,10 +46,18 @@
                     {{team.description}}
                 </p>
             </div>
-
-            <button v-if="$page.props.user" @click="sendJoinTeamReq()" class="sticky bottom-5 z-50 py-2 rounded-md text-white font-extrabold bg-sky-600 border-2 border-transparent ring-2"> JOIN </button>
+            <a v-if="$page.props.user && userTeamInfo.isOwner" :href="route('team.settings', {id: team.id})" class="sticky bottom-5 z-50 py-2 rounded-md text-white font-extrabold bg-sky-300 border-2 border-transparent ring-2">
+                <div class=" flex gap-x-5 justify-center">
+                    <p class=""> Settings </p> 
+                    <img class="h-7" src="../../../../public/images/settings.png" alt="" />
+                </div>
+            </a>
+            <button v-else-if="$page.props.user && !userTeamInfo.isJoined" @click="sendJoinTeamReq()" class="sticky bottom-5 z-50 py-2 rounded-md text-white font-extrabold bg-sky-600 border-2 border-transparent ring-2"> JOIN </button>
+            <button v-else-if="$page.props.user && userTeamInfo.canLeave" @click="sendLeaveTeamReq()" class="sticky bottom-5 z-50 py-2 rounded-md text-white font-extrabold bg-red-600 border-2 border-transparent ring-2"> Leave </button>
+            <button v-else-if="$page.props.user" disabled class="sticky bottom-5 z-50 py-2 rounded-md text-white font-extrabold bg-sky-300 border-2 border-transparent ring-2"> Joined </button>
             <a role="button" v-else :href="route('register')" class="sticky bottom-5 z-50 py-2 rounded-md text-white font-extrabold bg-sky-600 border-2 border-transparent ring-2 text-center"> JOIN </a>
             </div>
+
         </template>
 
         <section class="flex gap-4 mb-10 mt-3 ">
@@ -136,7 +144,7 @@ import AppLayout from "../../Layouts/AppLayout.vue";
 import Modal from '@/Jetstream/Modal'
 import Input from "../../Jetstream/Input.vue";
 export default {
-    props: ['team', 'permissions'],
+    props: ['team', 'permissions', 'userTeamInfo'],
     components: { AppLayout, Modal, Input },
     data() {
         return {
@@ -173,6 +181,10 @@ export default {
 
         sendJoinTeamReq() {
             this.$inertia.post(route('team.joinRequest', {team:this.team.id}))
+        },
+
+        sendLeaveTeamReq() {
+            this.$inertia.post(route('team.leaveRequest', {team:this.team.id}))
         },
 
         async checkRepo() {

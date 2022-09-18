@@ -40,7 +40,7 @@
                              <button v-if="tab == 'boards' && (permissions.indexOf('create_board') !== -1 || permissions.indexOf('*') !== -1)" @click="showModal = true;"
                                  class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-1 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2 text-center">Create
                                  Board</button>
-                             <button v-else-if="tab == 'index' && $page.props.user"
+                             <button v-else-if="tab == 'index' && $page.props.user && !userProjectInfo.isOwner && !userProjectInfo.isJoined"
                                  @click="reqPermission()"
                                  class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-1 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2 text-center">
                                  Request Permission </button>
@@ -85,7 +85,7 @@
  import Boards from './Boards.vue'
  import People from './People.vue'
  export default defineComponent({
-     props: ['boards',  'project', 'token', 'permissions'],
+     props: ['boards',  'project', 'token', 'permissions', 'userProjectInfo'],
      components: {
          AppLayout,
          Head,

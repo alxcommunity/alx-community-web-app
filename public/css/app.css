@@ -1268,6 +1268,9 @@ select {
 .h-44 {
   height: 11rem;
 }
+.h-7 {
+  height: 1.75rem;
+}
 .h-36 {
   height: 9rem;
 }
@@ -1789,6 +1792,10 @@ select {
 .bg-yellow-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 240 138 / var(--tw-bg-opacity));
+}
+.bg-sky-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(125 211 252 / var(--tw-bg-opacity));
 }
 .bg-sky-50 {
   --tw-bg-opacity: 1;

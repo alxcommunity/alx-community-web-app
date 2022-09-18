@@ -58,7 +58,7 @@
 </template>
 
 <script>
-     import { Head, Link } from '@inertiajs/inertia-vue3';
+     import { Head } from '@inertiajs/inertia-vue3';
      import { defineComponent } from 'vue'
      import AppLayout from '@/Layouts/AppLayout.vue'
 
@@ -66,8 +66,7 @@
          props: ['teams'],
         components: {
             AppLayout,
-            Head,
-            Link,
+            Head
           
         },
     })
