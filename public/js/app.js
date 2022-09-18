@@ -31858,7 +31858,7 @@ var _hoisted_1 = {
   "class": "flex justify-center"
 };
 var _hoisted_2 = {
-  "class": "container"
+  "class": ""
 };
 var _hoisted_3 = {
   "class": "font-extrabold font-sans text-3xl h-screen flex justify-between z-0 first-line:uppercase overflow-hidden bg-[length:70%] bg-center",

@@ -78,7 +78,7 @@ section figure img {
 <template >
       <app-layout class="relative mb-96 shadow-lg">
            <div class=" flex justify-center" >
-                    <div class="container ">
+                    <div class="">
                          <div class=" font-extrabold font-sans text-3xl
                          h-screen flex justify-between z-0 first-line:uppercase overflow-hidden bg-[length:70%] bg-center" style="background-image:url('../../../images/alxLogo.png')">
                               <div class=" uppercase mt-[calc(100vh-88vh)] bg-cover text-gray-700 text-center" >
